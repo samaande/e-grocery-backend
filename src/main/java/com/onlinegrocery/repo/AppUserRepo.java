@@ -16,21 +16,7 @@ public interface AppUserRepo extends JpaRepository<AppUser,Integer>{
 
 	AppUser findByUserName(String userName);
 
-	
-	static Object findByuserName(int i) {
 
-		// TODO Auto-generated method stub
-
-		return null;
-
-		}
 	Optional<AppUser> findByuserName(String userName);
 
-	static Optional<AppUser> findById(int userid) {
-
-	// TODO Auto-generated method stub
-
-	return null;
-
-	}
 }

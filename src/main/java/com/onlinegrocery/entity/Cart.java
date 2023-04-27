@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
-@Data
+
 @Entity
 @Table(name="cart")
 public class Cart {
@@ -30,6 +30,63 @@ public class Cart {
     @JoinColumn(name = "userId", nullable = false)
     private AppUser user;
     private String userName;
+	public int getCartId() {
+		return cartId;
+	}
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
+	}
+	public int getProductCount() {
+		return productCount;
+	}
+	public void setProductCount(int productCount) {
+		this.productCount = productCount;
+	}
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+	public AppUser getUser() {
+		return user;
+	}
+	public void setUser(AppUser user) {
+		this.user = user;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	@Override
+	public String toString() {
+		return "Cart [cartId=" + cartId + ", productCount=" + productCount + ", totalPrice=" + totalPrice
+				+ ", products=" + products + ", user=" + user + ", userName=" + userName + "]";
+	}
+	public Cart(int cartId, int productCount, double totalPrice, List<Product> products, AppUser user,
+			String userName) {
+		super();
+		this.cartId = cartId;
+		this.productCount = productCount;
+		this.totalPrice = totalPrice;
+		this.products = products;
+		this.user = user;
+		this.userName = userName;
+	}
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+    
+    
 	
 }
  
