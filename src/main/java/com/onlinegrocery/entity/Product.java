@@ -1,6 +1,7 @@
 package com.onlinegrocery.entity;
 
 import java.util.Arrays;
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,9 +14,6 @@ import javax.persistence.Transient;
 
 import com.onlinegrocery.enums.Category;
 
-import lombok.Data;
-
-@Data
 @Entity
 public class Product {
 	@Id

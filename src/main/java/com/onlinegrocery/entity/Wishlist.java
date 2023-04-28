@@ -2,6 +2,7 @@
 package com.onlinegrocery.entity;
  
 import java.util.List;
+
  
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,9 +18,7 @@ import javax.validation.constraints.NotNull;
  
 import com.fasterxml.jackson.annotation.JsonIgnore;
  
-import lombok.Data;
- 
-@Data
+
 @Entity
 @Table(name="wishlist")
 public class Wishlist {

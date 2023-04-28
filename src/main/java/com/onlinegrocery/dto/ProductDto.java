@@ -2,9 +2,8 @@ package com.onlinegrocery.dto;
 
 import com.onlinegrocery.enums.Category;
 
-import lombok.Data;
 
-@Data
+
 public class ProductDto {
 	
 	private int productId;
