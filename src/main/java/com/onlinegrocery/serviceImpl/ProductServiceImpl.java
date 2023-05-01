@@ -1,19 +1,14 @@
 package com.onlinegrocery.serviceImpl;
 
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.onlinegrocery.dto.ProductDto;
 import com.onlinegrocery.entity.Product;
 import com.onlinegrocery.enums.Category;
-import com.onlinegrocery.exceptions.CartNotFoundException;
 import com.onlinegrocery.exceptions.ProductIdNotFoundException;
 import com.onlinegrocery.exceptions.ProductsNotAvailableException;
 import com.onlinegrocery.repo.ProductRepo;

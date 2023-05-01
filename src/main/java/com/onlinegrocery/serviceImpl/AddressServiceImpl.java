@@ -24,22 +24,26 @@ public class AddressServiceImpl implements AddressService{
     private AppUserRepo appUserRepo;
     @Override
     public String addAddress(AddressDto address) {
-        // TODO Auto-generated method stub
-        Address add = new Address();
-//        add.setAddressId(address.getAddressId());
-        add.setHousenumber(address.getHousenumber());
-        add.setLandmark(address.getLandmark());
-        add.setStreet(address.getStreet());
-        add.setDistrict(address.getDistrict());
-        add.setState(address.getState());
-        add.setPin(address.getPin());
-        
-        //add.setU(address.getUserName());
-        AppUser user=appUserRepo.findById(address.getUserId()).get();
-        add.setUser(user);
-        addressRepo.save(add);
-        return "Address added successfully!";
+        Optional<AppUser> optionalUser = appUserRepo.findById(address.getUserId());
+        if (optionalUser.isPresent()) {
+            AppUser user = optionalUser.get();
+            
+            Address add = new Address();
+            add.setHousenumber(address.getHousenumber());
+            add.setLandmark(address.getLandmark());
+            add.setStreet(address.getStreet());
+            add.setDistrict(address.getDistrict());
+            add.setState(address.getState());
+            add.setPin(address.getPin());
+            add.setUser(user);
+            
+            addressRepo.save(add);
+            return "Address added successfully!";
+        } else {
+            return "User not found!";
+        }
     }
+
  
     @Override
     public List<Address> getAddressByUserId(AppUser userId) throws AddressNotFoundException {
